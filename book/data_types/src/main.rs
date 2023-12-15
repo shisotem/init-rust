@@ -1,6 +1,12 @@
 fn main() {
-    let quotient: f64 = 56.7 / 32.2;
-    println!("{}", quotient); // 1.7608695652173911
-    let floored: i32 = 2 / 3;
-    println!("{}", floored); // 0
+    // char
+    let c = 'z';
+    let z = 'ℤ';
+    let heart_eyed_cat = '😻';
+    println!("{}", c);
+    println!("{}", z);
+    println!("{}", heart_eyed_cat);
+    // z
+    // ℤ
+    // 😻
 }
