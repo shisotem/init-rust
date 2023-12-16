@@ -15,6 +15,8 @@ fn main() {
         };
     }
 
+    let res = fibonacci(num);
+    println!("{}", res);
 }
 
 fn get_num() -> Result<i32, String> {
@@ -25,5 +27,13 @@ fn get_num() -> Result<i32, String> {
             Err(_) => Err(String::from("Input was not a number")),
         },
         Err(_) => Err(String::from("Failed to read user input")),
+    }
+}
+
+fn fibonacci(num: i32) -> i32 {
+    match num {
+        0 => 0,
+        1 => 1,
+        _ => fibonacci(num - 1) + fibonacci(num - 2),
     }
 }
