@@ -1,5 +1,8 @@
 use std::io;
 
+const OPTION_C_TO_F: i32 = 0;
+const OPTION_F_TO_C: i32 = 1;
+
 fn main() {
     let mut selection = String::new();
 
@@ -9,15 +12,13 @@ fn main() {
 
         io::stdin()
             .read_line(&mut selection)
-            .expect("Failed to read line");
+            .expect("Failed to read user selection");
 
         match parse_selection(&selection) {
-            Some(num) if num == 0 || num == 1 => break,
+            Some(num) if num == OPTION_C_TO_F || num == OPTION_F_TO_C => break,
             _ => continue,
         }
     }
-
-    // println!("{}", selection);
 }
 
 fn display_options() {
