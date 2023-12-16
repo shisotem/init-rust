@@ -11,4 +11,14 @@ fn main() {
     } else {
         println!("number was zero"); // arm
     }
+
+    // ---
+
+    // error
+    // let condition = true;
+    // let number = if condition { 5 } else { "six" };
+    
+    // ok
+    let condition = true;
+    let number = if condition { 5 } else { 6 };
 }
