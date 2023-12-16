@@ -1,11 +1,11 @@
 use std::io;
 
 fn main() {
-    let num;
+    let fibonacci_index;
     loop {
-        match get_num() {
+        match get_index() {
             Ok(n) => {
-                num = n;
+                fibonacci_index = n;
                 break;
             }
             Err(e) => {
@@ -15,14 +15,14 @@ fn main() {
         };
     }
 
-    let res = fibonacci(num);
-    println!("{}", res);
+    let fibonacci_result = fibonacci(fibonacci_index);
+    println!("{}", fibonacci_result);
 }
 
-fn get_num() -> Result<i32, String> {
-    let mut num = String::new();
-    match io::stdin().read_line(&mut num) {
-        Ok(_) => match num.trim().parse::<i32>() {
+fn get_index() -> Result<i32, String> {
+    let mut user_input = String::new();
+    match io::stdin().read_line(&mut user_input) {
+        Ok(_) => match user_input.trim().parse::<i32>() {
             Ok(n) => Ok(n),
             Err(_) => Err(String::from("Input was not a number")),
         },
@@ -30,10 +30,10 @@ fn get_num() -> Result<i32, String> {
     }
 }
 
-fn fibonacci(num: i32) -> i32 {
-    match num {
+fn fibonacci(index: i32) -> i32 {
+    match index {
         0 => 0,
         1 => 1,
-        _ => fibonacci(num - 1) + fibonacci(num - 2),
+        _ => fibonacci(index - 1) + fibonacci(index - 2),
     }
 }
