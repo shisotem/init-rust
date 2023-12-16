@@ -1,3 +1,5 @@
+use core::num;
+
 fn main() {
     // // error
     // let number = 3;
@@ -59,4 +61,12 @@ fn main() {
     for e in arr {
         println!("{}", e);
     }
+
+    // ---
+
+    // better than while sample
+    for number in (1..4).rev() {
+        println!("{}!", number);
+    }
+    println!("LIFTOFF!!!");
 }
