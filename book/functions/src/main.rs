@@ -8,4 +8,15 @@ fn main() {
     // i.e.
     // - The statement 'let y = 6' doesn't return a value
     // - The expression 'x = 2' returns the unit type ()
+
+    // ---
+
+    // Function calls are also expressions.
+    // Macro invocations are expressions as well.
+    // The blocks ({}) used to create a new scope are also expressions.
+
+    let y = {
+        let x = 3;
+        x + 1
+    };
 }
