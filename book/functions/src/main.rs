@@ -19,4 +19,13 @@ fn main() {
         let x = 3;
         x + 1
     };
+
+    // ---
+
+    let ans = multiply(2, 5);
+    println!("The value of x is: {}", ans);
+}
+
+fn multiply(x: i32, y: i32) -> i32 {
+    x * y
 }
