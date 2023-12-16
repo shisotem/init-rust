@@ -27,7 +27,8 @@ fn get_index() -> Result<i32, String> {
     let mut user_input = String::new();
     match io::stdin().read_line(&mut user_input) {
         Ok(_) => match user_input.trim().parse::<i32>() {
-            Ok(n) => Ok(n),
+            Ok(n) if n >= 0 => Ok(n),
+            Ok(_) => Err(String::from("Invalid number")),
             Err(_) => Err(String::from("Input was not a number")),
         },
         Err(_) => Err(String::from("Failed to read user input")),
