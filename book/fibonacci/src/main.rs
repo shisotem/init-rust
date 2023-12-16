@@ -3,6 +3,7 @@ use std::io;
 fn main() {
     let fibonacci_index;
     loop {
+        println!("Please enter a non-negative integer:");
         match get_index() {
             Ok(n) => {
                 fibonacci_index = n;
@@ -16,7 +17,10 @@ fn main() {
     }
 
     let fibonacci_result = fibonacci(fibonacci_index);
-    println!("{}", fibonacci_result);
+    println!(
+        "The Fibonacci number at position {} is {}.",
+        fibonacci_index, fibonacci_result
+    );
 }
 
 fn get_index() -> Result<i32, String> {
