@@ -9,12 +9,14 @@ fn main() {
 
     // ---
 
-    // -> Stack (x: 5, y: 5)
+    // Copy
     let x = 5;
     let y = x;
+    // stack: x, stack: y
 
     // Move
     let s1 = String::from("hello");
     let s2 = s1;
     // println!("{}, world!", s1); // error
+    // (stack: s1), stack: s2, heap: "hello"
 }
