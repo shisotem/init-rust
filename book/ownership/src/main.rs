@@ -5,7 +5,7 @@ fn main() {
     {
         let mut _s_heap: String = String::from("hello");
         _s_heap.push_str(", world!");
-    } // drop _s_heap
+    } // Drop _s_heap(in stack) with "hello, world!"(in heap)
 
     // ---
 
