@@ -35,6 +35,9 @@ fn main() {
     // x: available, s1: unavailable
 
     // ---
+
+    let greeting = String::from("hello");
+    let (returned_greeting, len) = calculate_length(greeting); // move: greeting -> s
 }
 
 fn makes_copy(some_integer: i32) {
@@ -43,4 +46,9 @@ fn makes_copy(some_integer: i32) {
 
 fn takes_ownership(some_string: String) {
     println!("{}", some_string);
+}
+
+fn calculate_length(s: String) -> (String, usize) {
+    let length = s.len();
+    (s, length) // move: s -> returned_greeting, length -> len
 }
