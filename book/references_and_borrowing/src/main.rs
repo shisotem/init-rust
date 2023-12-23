@@ -9,6 +9,20 @@ fn main() {
         let mut s = String::from("hello");
         change(&mut s);
     }
+
+    {
+        // let mut s = String::from("hello");
+        // let r1 = &mut s; // OK
+        // let r2 = &mut s; // NG
+    }
+
+    {
+        let mut s = String::from("hello");
+        {
+            let r1 = &mut s;
+        }
+        let r2 = &mut s;
+    }
 }
 
 fn calculated_length(s: &String) -> usize {
