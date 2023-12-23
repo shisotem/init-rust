@@ -23,6 +23,13 @@ fn main() {
         }
         let r2 = &mut s;
     }
+
+    {
+        // let mut s = String::from("hello");
+        // let r1 = &s; // OK
+        // let r2 = &s; // OK
+        // let r3 = &mut s; // NG
+    }
 }
 
 fn calculated_length(s: &String) -> usize {
