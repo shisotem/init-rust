@@ -30,6 +30,15 @@ fn main() {
         // let r2 = &s; // OK
         // let r3 = &mut s; // NG
     }
+
+    {
+        // note: References must always be valid!
+        // let reference_to_nothing = dangle();
+    }
+
+    {
+        let no_dangle = no_dangle();
+    }
 }
 
 fn calculated_length(s: &String) -> usize {
@@ -39,4 +48,14 @@ fn calculated_length(s: &String) -> usize {
 
 fn change(some_string: &mut String) {
     some_string.push_str(", world");
+}
+
+// fn dangle() -> &String {
+//     let s = String::from("hello");
+//     &s
+// } // s scope out, drop s and "hello"
+
+fn no_dangle() -> String {
+    let s = String::from("hello");
+    s // move
 }
