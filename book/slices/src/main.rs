@@ -26,6 +26,8 @@ fn main() {
     {
         let my_string = String::from("hello world");
         let word = awesome_first_word(&my_string[..]);
+        let word = awesome_first_word(&my_string); // Automatically convert &String to &str (cf. Deref trait)
+
         let my_string_literal = "hello world";
         let word = awesome_first_word(&my_string_literal[..]);
         let word = awesome_first_word(my_string_literal);
