@@ -11,6 +11,17 @@ fn main() {
 
         // The length of the first word in "" is 5 // incorrect
     }
+
+    {
+        let s = String::from("hello world");
+        let word = first_word(&s);
+        println!("The first word in \"{}\" is {}", s, word);
+
+        // The first word in "hello world" is 5 // correct
+
+        // s.clear(); // error!
+        // println!("The first word in \"{}\" is {}", s, word);
+    }
 }
 
 // problem: s and length are not linked
@@ -25,4 +36,16 @@ fn length_of_first_word(s: &String) -> usize {
     }
 
     s.len()
+}
+
+fn first_word(s: &String) -> &str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[..i];
+        }
+    }
+
+    &s[..]
 }
