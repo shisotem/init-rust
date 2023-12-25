@@ -33,6 +33,12 @@ enum Message {
     ChangeColor(i32, i32, i32),
 }
 
+impl Message {
+    fn call(&self) {
+        // method body would be defined here
+    }
+}
+
 fn main() {
     {
         let four = IpAddrKind::V4;
@@ -49,6 +55,11 @@ fn main() {
         let move_message = Message::Move { x: 1, y: 2 };
         let write_message = Message::Write(String::from("hello"));
         let change_color_message = Message::ChangeColor(1, 2, 3);
+    }
+
+    {
+        let m = Message::Write(String::from("hello"));
+        m.call();
     }
 }
 
