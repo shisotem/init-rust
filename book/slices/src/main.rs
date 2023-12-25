@@ -32,6 +32,12 @@ fn main() {
         let word = awesome_first_word(&my_string_literal[..]);
         let word = awesome_first_word(my_string_literal);
     }
+
+    {
+        let a = [1, 2, 3, 4, 5];
+
+        let slice = &a[1..3];
+    }
 }
 
 // problem: s and length are not linked
