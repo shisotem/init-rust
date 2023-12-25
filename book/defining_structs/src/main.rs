@@ -47,6 +47,26 @@ fn main() {
         let black = Color(0, 0, 0);
         let origin = Point(0, 0, 0);
     }
+
+    {
+        // TODO: unit-like struct
+    }
+
+    {
+        // error[E0106]: missing lifetime specifier
+        // struct User {
+        //     username: &str,
+        //     email: &str,
+        //     sign_in_count: u64,
+        //     active: bool,
+        // }
+        // let user1 = User {
+        //     email: "someone@example.com",
+        //     username: "someusername123",
+        //     active: true,
+        //     sign_in_count: 1,
+        // };
+    }
 }
 
 fn build_user(email: String, username: String) -> User {
