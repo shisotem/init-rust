@@ -1,16 +1,16 @@
-// #[derive(Debug)]
-// enum UsState {
-//     Alabama,
-//     Alaska,
-//     // --snip--
-// }
+#[derive(Debug)]
+enum UsState {
+    Alabama,
+    Alaska,
+    // --snip--
+}
 
-// enum Coin {
-//     Penny,
-//     Nickel,
-//     Dime,
-//     Quarter(UsState),
-// }
+enum Coin {
+    Penny,
+    Nickel,
+    Dime,
+    Quarter(UsState),
+}
 
 fn main() {
     // match
@@ -52,6 +52,24 @@ fn main() {
         // [cons] no inclusivity check
         if let Some(3) = some_u8_value {
             println!("three");
+        }
+    }
+
+    {
+        // let coin = Coin::Quarter(UsState::Alaska);
+        let coin = Coin::Penny;
+
+        // let mut count = 0;
+        // match coin {
+        //     Coin::Quarter(state) => println!("State quarter from {:?}!", state),
+        //     _ => count += 1,
+        // }
+
+        let mut count = 0;
+        if let Coin::Quarter(state) = coin {
+            println!("State quarter from {:?}!", state);
+        } else {
+            count += 1;
         }
     }
 }
