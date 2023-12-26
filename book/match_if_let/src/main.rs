@@ -13,6 +13,7 @@
 // }
 
 fn main() {
+    // match
     {
         // let coin = Coin::Quarter(UsState::Alaska);
         // let value = value_in_cents(coin);
@@ -35,6 +36,22 @@ fn main() {
             5 => println!("five"),
             7 => println!("seven"),
             _ => (), // unit value: nothing will happen
+        }
+    }
+
+    // if let
+    {
+        let some_u8_value = Some(3u8);
+
+        // match some_u8_value {
+        //     Some(3) => println!("three"),
+        //     _ => (),
+        // }
+
+        // [pros] simplicity
+        // [cons] no inclusivity check
+        if let Some(3) = some_u8_value {
+            println!("three");
         }
     }
 }
